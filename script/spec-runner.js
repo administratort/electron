@@ -115,8 +115,6 @@ async function runMainProcessElectronTests () {
   const exe = path.resolve(BASE, utils.getElectronExec())
   const args = process.argv.slice(2).filter(arg => !arg.startsWith('--only='))
 
-  console.log(exe, args)
-
   const { status } = childProcess.spawnSync(exe, ['electron/spec-main', ...args], {
     cwd: path.resolve(__dirname, '../..'),
     stdio: 'inherit'
